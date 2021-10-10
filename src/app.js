@@ -19,9 +19,16 @@ import './style.css';
 const farewell = document.querySelector('.farewell');
 const suits = ['hearts', 'spades', 'diamonds', 'clubs'];
 
-while (confirm('Would you like to play the game?')) {
-  // Put your code in this while loop
-  // Remember to use prompt and alert
+while (confirm('Would you like to play this game?')) {
+  const actualSuit = suits[getRandomInt(0, 4)];
+  const answer = prompt(
+    'What suit is my card - Hearts, Spades, Diamonds, or Clubs?'
+  );
+  if (answer === actualSuit) {
+    alert(`Yeah, you won! The answer was ... ${actualSuit}`);
+  } else {
+    alert(`Sorry, the answer was ... ${actualSuit}`);
+  }
 }
 
 farewell.innerHTML = '<h1>Thanks for playing!<h1>';
